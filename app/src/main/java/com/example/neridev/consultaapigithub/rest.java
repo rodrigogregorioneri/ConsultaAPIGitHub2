@@ -20,7 +20,8 @@ public class rest implements RepositorioInterface {
 
     @Override
     public Call<List<Repositories>> listRepos() {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(RepositorioInterface.API_URL).build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(RepositorioInterface.API_URL)
+                .addConverterFactory(GsonConverterFactory.create()).build();
 
         List<Repositories> repositories = null;
 
